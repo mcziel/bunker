@@ -1,0 +1,142 @@
+==
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{"assets/images/favicon.png"|theme}}" />
+	<link href="{{ ['assets/css/bootstrap.min.css','assets/css/style.css','assets/css/lightslider.min.css']|theme }}" rel="stylesheet">
+	<script src="https://use.fontawesome.com/8f5b055b8d.js"></script>
+	<title>Bunker</title>
+</head>
+<body class="{{bodyclass}}">
+	<!-- menu Float -->
+	<div class="menu-float trans-5">
+		<div class="float-content trans-5">
+			<div class="flex-content">
+				<div class="menu-container">
+                    <a href="{{"inicio"|page}}">
+					    <img src="{{"assets/images/logo-bunker-menu.png"|theme}}" class="logo-menu" width="100" class="img-responsive" alt="" />
+					</a>
+					<nav>
+						<ul>
+							<li class="has-child">
+							<a href="#" class="underline"> Nosotros</a>
+							<ul class="submenu">
+								<li><a href="" class="underline">lorem</a></li>
+								<li><a href="" class="underline">lorem</a></li>
+								<li><a href="" class="underline">lorem</a></li>								
+							</ul>
+							</li>
+							<li class="has-child">
+							<a href="#" class="underline">Servicios</a>
+							<ul class="submenu">
+								<li><a href="" class="underline">lorem</a></li>
+								<li><a href="" class="underline">lorem</a></li>
+								<li><a href="" class="underline">lorem</a></li>								
+							</ul>
+							</li>
+
+							<li><a href="#" class="underline">Servicios</a></li>
+							<li><a href="#" class="underline">Nuestras Instalaciones</a></li>
+							<li><a href="#" class="underline">Certiﬁcaciones</a></li>
+							<li><a href="#" class="underline">Noticias</a></li>
+							<li><a href="#" class="underline">Cotizaciones</a></li>
+
+						</ul>
+					</nav>
+				</div>
+				<div class="search-container">
+					<a href="#" class="return-back"><i class="fa fa-chevron-left trans-3"></i> VOLVER</a>	
+					<div class="search-form">
+						<form action="#">
+							<div class="form-group">
+								<input type="text" name="search" class="form-control" placeholder="Buscar..." id="">	
+							</div>
+						</form>
+					</div>
+
+					<div class="float-right-foot">	
+						<!-- Socials -->
+					<div class="socials elem">
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-instagram"></i></a>
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-envelope"></i></a>
+
+					</div>
+					<!-- end Socials -->
+					<!-- Mini Contacts -->
+					<ul class="mini-contacts elem">
+						<li>
+							<a href="#" class="tel trans-3">T: (809) 537-5335</a>
+						</li>
+
+					</ul>
+					<!-- end Mini Contacts -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- end menu Float -->
+
+
+
+	<!-- header -->
+	<header id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="{{"inicio"|page}}" class="logo elem"><img src="{{"assets/images/bunker-logo.svg"|theme}}" alt="Bunker Logo" width="100%" class="img-responsive" /></a>
+
+					<!-- Socials -->
+					<div class="socials elem">
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-instagram"></i></a>
+						<a href="#" class="trans-3" target="_blank"><i class="fa fa-envelope"></i></a>
+
+					</div>
+					<!-- end Socials -->
+					<!-- Mini Contacts -->
+					<ul class="mini-contacts elem">
+						<li>
+							<a href="#" class="tel trans-3">T: (809) 537-5335</a>
+						</li>
+						<li>
+							<a href="#" class="trans-3">Cotizaciones</a>
+						</li>
+
+					</ul>
+					<!-- end Mini Contacts -->
+					<div class="menu-toggle elem trans-3">
+						<i class="fa fa-bars"></i>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<!-- end header -->
+	
+	{% page %}
+
+
+    <!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<strong>BUNKER</strong>. Solución Integral de Documentos <br>
+					Calle 6 (antigua Carretera Duarte) No. 16, Los Alcarrizos, Santo Domingo Oeste
+				</div>
+			</div>
+		</div>
+	</footer>
+    <!-- end Footer -->
+	<script src="{{ ['@jquery','@framework','@framework.extras','assets/js/popper.min.js','assets/js/bootstrap.min.js','assets/js/lightslider.min.js','assets/js/main.js']|theme }}"></script>
+</body>
+</html>
