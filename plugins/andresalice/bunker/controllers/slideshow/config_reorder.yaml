@@ -1,0 +1,4 @@
+title: Slideshow
+modelClass: AndresAlice\Bunker\Models\Slideshow
+toolbar:
+    buttons: reorder_toolbar

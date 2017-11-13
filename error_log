@@ -1,0 +1,2 @@
+[12-Sep-2017 14:52:28 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';' in /home/kationdev/public_html/dev/bunker/plugins/andresalice/bunker/models/Quote.php on line 23
+[12-Sep-2017 15:13:08 UTC] PHP Fatal error:  Class 'Quote' not found in /home/kationdev/public_html/dev/bunker/storage/cms/cache/65/8c/contacto.htm.php on line 7

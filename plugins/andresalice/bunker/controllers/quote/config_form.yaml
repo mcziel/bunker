@@ -1,0 +1,10 @@
+name: Quote
+form: $/andresalice/bunker/models/quote/fields.yaml
+modelClass: AndresAlice\Bunker\Models\Quote
+defaultRedirect: andresalice/bunker/quote
+create:
+    redirect: 'andresalice/bunker/quote/update/:id'
+    redirectClose: andresalice/bunker/quote
+update:
+    redirect: andresalice/bunker/quote
+    redirectClose: andresalice/bunker/quote

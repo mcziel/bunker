@@ -4,6 +4,12 @@
         var _class = 'active',
             elemSlider = $('.main-slider .sliders > ul');
 
+
+            
+              new WOW().init();
+              
+
+
         if($('.main-slider').hasClass('second')){
              elemSlider = $('.main-slider.second .sliders-bg > ul');
         }        

@@ -1,0 +1,4 @@
+title: Solution
+modelClass: AndresAlice\Bunker\Models\Solution
+toolbar:
+    buttons: reorder_toolbar

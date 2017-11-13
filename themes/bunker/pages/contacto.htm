@@ -1,0 +1,109 @@
+title = "contacto"
+url = "/contacto"
+layout = "Layout"
+is_hidden = 0
+==
+<?php
+use AndresAlice\Bunker\Models\Contact;
+
+function onContactForm()
+{
+    $contact = Contact::make(Input::all());
+    $contact->save();
+}
+?>
+==
+<section id="content" class="cotizaciones">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>{{'¡Hola!'|_}}</h1>
+				<form action="" method="post" id="contactForm" class="form">
+					<div class="form-group">
+						<label>
+							<strong>{{'Nombre'|_}}</strong>
+							<input name="name" type="text"  class="form-control text-control" />
+
+						</label>
+					</div>
+					<div class="form-group">
+						<label>
+							<strong>{{'Apellido'|_}}</strong>
+							<input name="lastname" type="text"  class="form-control text-control" />
+
+						</label>
+					</div>
+					<div class="form-group">
+						<label>
+							<strong>{{'Correo'|_}}</strong>
+							<input name="email" type="email"  class="form-control text-control" />
+
+						</label>
+					</div>
+					<div class="form-group">
+						<label class="col-md-6">
+							<strong>{{'Motivo del Contacto'|_}}</strong>
+							<div class="radio">
+                              <label><input value="Solicitud de Información" type="radio" name="reason">{{'Solicitud de Información'|_}}</label>
+                            </div>
+                            <div class="radio">
+                              <label><input value="Sugerencia" type="radio" name="reason">{{'Sugerencia'|_}}</label>
+                            </div>
+                            <div class="radio">
+                              <label><input value="Reclamación" type="radio" name="reason">{{'Reclamación'|_}}</label>
+                            </div>
+
+						</label>
+						<label class="col-md-6">
+						    <div class="radio">
+                              <label><input value="Felicitación" type="radio" name="reason">{{'Felicitación'|_}}</label>
+                            </div>
+							<div class="radio">
+                              <label><input value="Otro" type="radio" name="reason">{{'Otro'|_}}</label>
+                            </div>
+						</label>
+					</div>
+					<div class="form-group">
+						<label><strong>{{'Mensaje'|_}}</strong>
+							<textarea name="message" class="form-control textarea-control" rows="5" id="comment" placeholder="{{'Deja tu mensaje aquí'|_}}..."></textarea></label>
+					</div>
+					<div style="display:none;" id="contactFormMessage" class="alert alert-success">
+                      <strong>{{'¡Bien!'|_}}</strong> {{'Su mensaje fue enviado con éxito.'|_}}
+                    </div>
+						<div class="form-group">
+							<label>
+								<input onClick="onContactForm();" type="button" value="{{'ENVIAR'|_}}" class="btn btn-one" />
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% put scripts %}
+<script>
+    function onContactForm()
+    {
+    	var error = true; var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    	if($('input[name=name]').val() === ''){$('input[name=name]').css('border', '1px solid red');error = false;} 
+    	else{$('input[name=name]').css('border', '');}
+    	
+    	if($('input[name=lastname]').val() === ''){$('input[name=lastname]').css('border', '1px solid red');error = false;} 
+    	else{$('input[name=lastname]').css('border', '');}
+    	
+    	if(!regex.test($('input[name=email]').val())){$('input[name=email]').css('border', '1px solid red');error = false;} 
+    	else {$('input[name=email]').css('border', '');}
+    	
+    	if($('textarea[name=message]').val() === ''){$('textarea[name=message]').css('border', '1px solid red');error = false;} 
+    	else {$('textarea[name=message]').css('border', '');}
+    	
+    	if(error)
+    	{
+    		$('#contactForm').request('onContactForm', {data: $('#contactForm').serialize()});
+    		$('#contactFormMessage').fadeIn();
+    		$('#contactForm').trigger("reset");
+    	} 
+    	else { return false; }
+    }     
+</script>
+{% endput %}

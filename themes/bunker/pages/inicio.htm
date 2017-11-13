@@ -1,0 +1,116 @@
+title = "Inicio"
+url = "/"
+layout = "Layout"
+is_hidden = 0
+==
+<?php
+use AndresAlice\Bunker\Models\Slideshow;
+
+function onStart()
+{
+    $this['slideshows'] = Slideshow::get();    
+}
+?>
+==
+<!-- Slider -->
+<section class="main-slider second">
+	<div class="slider-controls">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="flex-content">
+						<aside class="left">
+							<div class="bullets"></div>
+							<div class="controls">
+								<a href="#" class="prev trans-3"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+								<a href="#" class="next trans-3"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+							</div>
+						</aside>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="sliders-bg">
+		<ul>
+		    {% for slide in slideshows %}
+			<li class="img" style='background-image: url("{{slide.slides.getPath}}");'>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">	
+							<div class="text">	
+								<div class="text-wrap">	
+								{% if slide.title %}
+									<h3 class="wow fadeInLeft" data-wow-duration="1.5s">{{slide.title}}</h3>
+								{% endif %}
+								{% if slide.description %}
+									<div class="desc wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".5s">{{slide.description|raw}}</div>
+								{% endif %}
+							    {% if slide.link %}
+									<a href="{{slide.link}}" target="_blank" class="btn btn-two wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="1s">{{"Leer más"|_}}</a>
+								{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>	
+
+
+</section>
+<!-- Slider -->
+<section class="home-services" >
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-12">
+				<div class="services-types">
+					<div class="flex-content">
+						<div class="shape">
+						    <a style="text-decoration:none" href="{{"custodia"|page}}">
+						       <img src="{{"assets/images/icon-custodia.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s"> <h3  class="wow zoomInUp" data-wow-duration="1s" >{{'Custodia <br>de Archivos'|_}}</h3>
+						    </a>
+													
+						</div>
+						<div class="shape">
+						    <a style="text-decoration:none" href="{{"digitalizacion"|page}}">
+						      <img src="{{"assets/images/icon-documentos.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s"> <h3 class="wow zoomInUp" data-wow-duration="1s" data-wow-delay=".5s">{{'Digitalización  <br>de Documentos'|_}}</h3>	
+						  </a>       
+						
+						</div>
+						<div class="shape">
+						    <a style="text-decoration:none" href="{{"software"|page}}">
+						        	<img src="{{"assets/images/icon-software.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".8s"> <h3 class="wow zoomInUp" data-wow-duration="1s" data-wow-delay="1s">{{'Software de Gestión<br>Documental'|_}}</h3>	    
+						    </a>
+												
+						</div>
+						<div class="shape">
+						    <a style="text-decoration:none" href="{{"destruccion"|page}}">
+						        <img src="{{"assets/images/icon-trash.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s" data-wow-delay="1s"> <h3 class="wow zoomInUp" data-wow-delay="1.3s"  data-wow-duration="1s" >{{'Destrucción <br>Confidencial'|_}}</h3>
+						    </a>
+														
+						</div>
+						<div class="shape">
+						   <a style="text-decoration:none" href="{{"backup"|page}}" >
+						    <img src="{{"assets/images/icon-backup.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s" data-wow-delay="1.5s"> <h3 class="wow zoomInUp" data-wow-delay="1.7s" data-wow-duration="1s" >{{'Guarda <br>de Back Up'|_}}</h3>	 
+						   </a>
+						
+						</div>
+						<div class="shape">
+						   <a style="text-decoration:none" href="{{"organizacion"|page}}" >
+						    <img src="{{"assets/images/icon-organizacion.svg"|theme}}" height='90' alt="" class="wow zoomIn" data-wow-duration="1s" data-wow-delay="2s"> <h3 class="wow zoomInUp" data-wow-delay="2.2s"  data-wow-duration="1s" >{{'Organización <br>de Archivo'|_}}</h3>	
+						   </a> 
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

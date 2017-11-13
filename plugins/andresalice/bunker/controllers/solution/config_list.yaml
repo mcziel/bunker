@@ -1,0 +1,11 @@
+list: $/andresalice/bunker/models/solution/columns.yaml
+modelClass: AndresAlice\Bunker\Models\Solution
+title: Solution
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'andresalice/bunker/solution/update/:id'

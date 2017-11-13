@@ -1,0 +1,126 @@
+title = "Busqueda"
+url = "/busqueda"
+layout = "Layout"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+    if(post("search"))
+    {
+        $unwanted_array = array('Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
+                            'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U',
+                            'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss', 'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c',
+                            'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o',
+                            'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y');
+        $string = strtolower(post("search"));
+        $content = [
+            //Español
+            "Inicio" => "./",
+            "Nosotros" => "./nosotros",
+            "Seguridad (Nosotros)" => "./nosotros",
+            "Seguridad (Certificaciones)" => "./certificaciones",
+            "Confidencialidad (Nosotros)" => "./nosotros",
+            "Accesibilidad" => "./nosotros",
+            "Custodia de Archivos" => "./custodia",
+            "Custodia por Caja" => "./custodia",
+            "Custodia por Expediente" => "./custodia",
+            "Gestión Online de Documentos" => "./custodia",
+            "Digitalizacion de Documentos" => "./digitalizacion",
+            "Software de Gestion Documental" => "./software",
+            "Destrucción Confidencial" => "./destruccion",
+            "Buzones Confidenciales" => "./destruccion",
+            "Control de Acceso" => "./instalaciones",
+            "Sistema Anti Incendio" => "./instalaciones",
+            "Ciclones y Terremotos" => "./instalaciones",
+            "Confidencialidad (Instalaciones)" => "./instalaciones",
+            "Tour Virtual" => "./instalaciones",
+            "Guarda de Backup" => "./backup",
+            "Organización de Archivos" => "./organizacion",
+            "Nuestras Instalaciones" => "./instalaciones",
+            "Certificaciones" => "./certificaciones",
+            "Calidad" => "./certificaciones",
+            "Cotizaciones" => "./cotizaciones",
+            "Contacto" => "./contacto",
+            "Solicitudes fuera de horario" => "./contacto",
+            "Datos de Contacto" => "./contacto",
+            "Ficha de Contacto" => "./contacto",
+            //Ingles
+            "Home" => "./",
+            "About Us" => "./nosotros",
+            "Security (About Us)" => "./nosotros",
+            "Security (Certifications)" => "./certificaciones",
+            "Confidentiality (About Us)" => "./nosotros",
+            "Accessibility" => "./nosotros",
+            "File Custody" => "./custodia",
+            "Custody per box" => "./custodia",
+            "File Custody" => "./custodia",
+            "Mass Document Scanning" => "./custodia",
+            "Digitalizacion de Documentos" => "./digitalizacion",
+            "Online Document Management" => "./software",
+            "Confidential Destruction" => "./destruccion",
+            "Confidential Mailboxes" => "./destruccion",
+            "Access Control" => "./instalaciones",
+            "Sistema Anti Incendio" => "./instalaciones",
+            "Ciclones y Terremotos" => "./instalaciones",
+            "Confidentiality (Our Facilities)" => "./instalaciones",
+            "Tour Virtual" => "./instalaciones",
+            "Back Up Storage" => "./backup",
+            "Organización de Archivos" => "./organizacion",
+            "Our Facilities" => "./instalaciones",
+            "Certifications" => "./certificaciones",
+            "Quality" => "./certificaciones",
+            "Quotations" => "./cotizaciones",
+            "Contact" => "./contacto",
+            "Solicitudes fuera de horario" => "./contacto",
+            "Datos de Contacto" => "./contacto",
+            "Ficha de Contacto" => "./contacto",
+        ];
+        $matches = [];
+        foreach($content as $key => $value)
+        {
+            $compare = strtolower($key);
+            $compare2 = strtr($compare, $unwanted_array );
+            if(strpos($compare2, $string) !== false) 
+            {
+                $link = new stdClass;
+                $link->name = $key;
+                $link->link = $value;
+                $matches[] = $link;
+            }
+        }
+        $this['matches'] = $matches;
+    } 
+    else 
+    {
+        $this['matches'] = false;
+    }
+}
+?>
+==
+<section id="content">
+<div class="container">
+<div class="row">
+    {% if matches %}
+	<div class="col-md-12">
+		<h3>Resultados encontrados</h3>
+	</div>
+	<div class="col-md-9">
+	    <ul>
+	        {% for match in matches %}
+            <li>
+                <a href="{{ match.link }}">
+                    <h5>{{ match.name|capitalize }}</h5>
+                    <!-- <p style="color:black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, facilis facere dolore aliquid. Ipsum, quae. Sed magni repellendus repudiandae vitae repellat nesciunt. Beatae, deleniti ipsam enim, quae fugiat perferendis repellat!</p> -->
+                </a>
+            </li>
+            {% endfor %}
+	    </ul>
+	</div>
+	{% else %}
+	<div class="col-md-12">
+		<h3>No se encontraron resultados para su busqueda.</h3>
+	</div>
+	{% endif %}
+</div>
+</section>

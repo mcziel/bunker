@@ -1,0 +1,29 @@
+fields:
+    title:
+        label: TITULO
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    link:
+        label: LINK
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    description:
+        label: DESCRIPCION
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    slides:
+        label: IMAGENES
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: 100
+        imageHeight: 100
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

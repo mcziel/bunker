@@ -1,0 +1,10 @@
+name: Solution
+form: $/andresalice/bunker/models/solution/fields.yaml
+modelClass: AndresAlice\Bunker\Models\Solution
+defaultRedirect: andresalice/bunker/solution
+create:
+    redirect: 'andresalice/bunker/solution/update/:id'
+    redirectClose: andresalice/bunker/solution
+update:
+    redirect: andresalice/bunker/solution
+    redirectClose: andresalice/bunker/solution

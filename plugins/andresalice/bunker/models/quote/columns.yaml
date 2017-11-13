@@ -1,0 +1,46 @@
+columns:
+    name:
+        label: NOMBRE
+        type: text
+        searchable: true
+        sortable: true
+    lastname:
+        label: APELLIDO
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: EMAIL
+        type: text
+        searchable: true
+        sortable: true
+    company:
+        label: COMPAÑIA
+        type: text
+        searchable: true
+        sortable: true
+    address:
+        label: DIRECCION
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: TELEFONO
+        type: text
+        searchable: true
+        sortable: true
+    celphone:
+        label: CELULAR
+        type: text
+        searchable: true
+        sortable: true
+    service:
+        label: SERVICIO
+        type: text
+        searchable: true
+        sortable: true
+    message:
+        label: COMENTARIO
+        type: text
+        searchable: true
+        sortable: true

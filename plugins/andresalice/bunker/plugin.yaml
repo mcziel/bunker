@@ -1,0 +1,32 @@
+plugin:
+    name: 'andresalice.bunker::lang.plugin.name'
+    description: 'andresalice.bunker::lang.plugin.description'
+    author: 'Andres Alice'
+    icon: oc-icon-adjust
+    homepage: ''
+permissions:
+    ALL:
+        tab: ALL
+        label: ALL
+navigation:
+    content:
+        label: Contenido
+        url: andresalice/bunker/quote
+        icon: icon-life-ring
+        sideMenu:
+            quotes:
+                label: Cotizaciones
+                url: andresalice/bunker/quote
+                icon: icon-dollar
+            contacts:
+                label: Contactos
+                url: andresalice/bunker/contact
+                icon: icon-paper-plane
+            solutions:
+                label: Soluciones
+                url: andresalice/bunker/solution
+                icon: icon-search
+            slideshows:
+                label: Slideshows
+                url: andresalice/bunker/slideshow
+                icon: icon-image

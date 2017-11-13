@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table andresalice_bunker_quotes'
+    - builder_table_create_andresalice_bunker_quotes.php
+1.0.3:
+    - 'Created table andresalice_bunker_contacts'
+    - builder_table_create_andresalice_bunker_contacts.php
+1.0.4:
+    - 'Created table andresalice_bunker_solutions'
+    - builder_table_create_andresalice_bunker_solutions.php
+1.0.5:
+    - 'Updated table andresalice_bunker_solutions'
+    - builder_table_update_andresalice_bunker_solutions.php
+1.0.6:
+    - 'Created table andresalice_bunker_slideshows'
+    - builder_table_create_andresalice_bunker_slideshows.php
+1.0.7:
+    - 'Updated table andresalice_bunker_slideshows'
+    - builder_table_update_andresalice_bunker_slideshows.php
+1.0.8:
+    - 'Updated table andresalice_bunker_slideshows'
+    - builder_table_update_andresalice_bunker_slideshows_2.php
+1.0.9:
+    - 'Updated table andresalice_bunker_slideshows'
+    - builder_table_update_andresalice_bunker_slideshows_3.php

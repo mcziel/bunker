@@ -1,0 +1,10 @@
+name: Slideshow
+form: $/andresalice/bunker/models/slideshow/fields.yaml
+modelClass: AndresAlice\Bunker\Models\Slideshow
+defaultRedirect: andresalice/bunker/slideshow
+create:
+    redirect: 'andresalice/bunker/slideshow/update/:id'
+    redirectClose: andresalice/bunker/slideshow
+update:
+    redirect: andresalice/bunker/slideshow
+    redirectClose: andresalice/bunker/slideshow

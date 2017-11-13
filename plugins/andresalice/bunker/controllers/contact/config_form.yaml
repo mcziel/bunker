@@ -1,0 +1,10 @@
+name: Contact
+form: $/andresalice/bunker/models/contact/fields.yaml
+modelClass: AndresAlice\Bunker\Models\Contact
+defaultRedirect: andresalice/bunker/contact
+create:
+    redirect: 'andresalice/bunker/contact/update/:id'
+    redirectClose: andresalice/bunker/contact
+update:
+    redirect: andresalice/bunker/contact
+    redirectClose: andresalice/bunker/contact
